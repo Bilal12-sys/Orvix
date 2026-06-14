@@ -14,7 +14,6 @@ document.addEventListener('click', (e) => {
     }
 });
 
-
 const post = document.getElementById("postbtn");
 const welcome = document.getElementById("wel");
 
@@ -84,12 +83,16 @@ fileInput.addEventListener("change", function() {
 
 post.addEventListener("click", () => {
     parent.classList.add("open");
-    welcome.style.display = "none";
+    if (document.getElementById("wel")) {
+        welcome.style.display = "none";
+    }
 });
 
 function resetForm() {
     parent.classList.remove("open");
-    welcome.style.display = "flex";
+    if (document.getElementById("wel")) {
+        welcome.style.display = "flex";
+    }
     prew.src = "";
     prew.classList.remove("active");
     fileInput.value = "";
@@ -132,7 +135,6 @@ uploadbtn.addEventListener('click', () => {
     const postTitle = document.createElement("h3");
     postTitle.innerText = txt.value;
     postTitle.classList.add("feed-post-title");
-
     postContentBox.appendChild(postTitle);
 
     if (textarea.value.trim()) {
@@ -151,5 +153,4 @@ uploadbtn.addEventListener('click', () => {
 
     mainFeed.appendChild(mainpost);
     resetForm();
-    welcome.style.display = "none";
 });

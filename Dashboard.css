@@ -78,7 +78,6 @@ aside::after {
 
 aside.active {
     width: var(--aside-w);
-
 }
 
 .dot {
@@ -311,19 +310,21 @@ aside.active .logout h4 span {
 }
 
 main {
-    margin-left: var(--aside-collapsed);
-    width: calc(100% - var(--aside-collapsed));
-    min-height: 100vh;
+    min-height: 70vh;
+    width: 550px;
     display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
+    padding: 0px 100px;
+    gap: 35px;
     position: relative;
     transition: margin-left 0.35s cubic-bezier(0.4, 0, 0.2, 1), width 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 aside.active ~ main {
     margin-left: var(--aside-w);
-    width: calc(100% - var(--aside-w));
+
 }
 
 .wel {
@@ -331,12 +332,13 @@ aside.active ~ main {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    min-height: 80vh;
     width: 100%;
     max-width: 100%;
     padding: 40px 24px;
     position: relative;
     animation: welFadeIn 0.7s ease forwards;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 @keyframes welFadeIn {
@@ -560,8 +562,7 @@ aside.active ~ main {
     font-size: 12px;
     letter-spacing: 0.05em;
     cursor: pointer;
-    transition: all 0.25s ease;;
-    margin-right: 80px;
+    transition: all 0.25s ease;
 }
 
 .upload-label:hover {
@@ -571,59 +572,55 @@ aside.active ~ main {
     transform: translateY(-1px);
 }
 
-.text{
+.text {
      font-family: 'Orbitron', sans-serif;
      font-size: 30px;
      letter-spacing: 3px;
 }
-.uploadbtn{
+
+.uploadbtn {
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    padding: 12px 24px;
-    border-radius: 12px;
-    background: rgba(34, 211, 238, 0.1);
-    border: 1px solid rgba(34, 211, 238, 0.3);
-    color: var(--cyan);
+    padding: 14px 32px;
+    border-radius: 14px;
+    background: linear-gradient(90deg, rgba(124, 58, 237, 0.85) 0%, rgba(59, 130, 246, 0.8) 100%);
+    border: 1px solid rgba(167, 139, 250, 0.3);
+    color: #fff;
     font-family: 'Orbitron', sans-serif;
-    font-size: 12px;
-    letter-spacing: 0.05em;
+    font-size: 13px;
+    letter-spacing: 0.06em;
     cursor: pointer;
     transition: all 0.25s ease;
 }
 
-.uploadbtn:hover{
-     background: rgba(34, 211, 238, 0.2);
-    border-color: var(--cyan);
-    box-shadow: 0 0 15px rgba(34, 211, 238, 0.2);
+.uploadbtn:hover {
+    background: rgba(124, 58, 237, 0.2);
+    border-color: var(--purple-l);
+    box-shadow: 0 0 20px rgba(124, 58, 237, 0.4);
     transform: translateY(-1px);
 }
 
-.mainup{
+.mainup {
     display: flex;
     align-items: center;
     justify-content: center;
-    
+    gap: 20px;
+    width: 100%;
+    max-width: 500px;
 }
 
-.prew{
-    height: 50px;
-    width: 50px;
+.prew {
+    height: 54px;
+    width: 54px;
+    object-fit: cover;
     border-radius: 12px;
-    border: 1px solid var(--cyan);
-    
-
+    border: 1px solid rgba(34, 211, 238, 0.4);
+    display: none;
 }
 
-main {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    width: 400px;
-    padding: 0px 20px;
-    gap: 30px;
-    overflow-y: auto;
+.prew.active {
+    display: block;
 }
 
 .feed-post {
@@ -639,7 +636,6 @@ main {
 
 .feed-post-img {
     width: 100%;
-    min-height: 20px;
     max-height: 380px;
     object-fit: cover;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
@@ -669,15 +665,6 @@ main {
     color: var(--muted);
 }
 
-
-
-
-
-
-
-
-
-/* Resposnsibe */
 @media (max-width: 768px) {
     :root {
         --aside-collapsed: 65px;
@@ -702,8 +689,6 @@ main {
 
     .postparent {
         padding: 16px;
-       
-
     }
 
     .postbox {
@@ -711,7 +696,6 @@ main {
         min-height: 380px;
         padding: 20px;
         border-radius: 20px;
-        
     }
 }
 
