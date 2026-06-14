@@ -10,18 +10,14 @@
 </head>
 <body>
 
-  <aside>
-
+  <aside id="sidebar">
     <div class="dot">
-         
-    <div class="imd">
-      <img src="IMAGES/logo.png">
-      <span>OVRIX</span>
-    </div>
+      <div class="imd">
+        <img src="IMAGES/logo.png" alt="Logo">
+        <span>ORVIX</span>
+      </div>
       <span class="dots" id="open"><i class="fa-solid fa-bars"></i></span>
-   
     </div>
-
 
     <div class="items">
       <h4><i class="fa-regular fa-user"></i><span>Profile</span></h4>
@@ -32,21 +28,26 @@
     <div class="logout">
       <h4><i class="fa-solid fa-arrow-right-from-bracket"></i><span>Logout</span></h4>
     </div>
-
   </aside>
 
   <main>
-    <section class="wel">
+    <section class="wel" id="wel">  
       <div class="wel-text">
         <h2>Welcome TO ORVIX</h2>
         <p>Connect, <span class="f">share posts</span>, <span class="S">upload media</span>, and <span class="L">explore the ORVIX community</span>.</p>
       </div>
-      <button class="post-btn">
+      <button class="post-btn" id="postbtn">
         <i class="fa-solid fa-plus"></i>
         Create Your first Post
       </button>
     </section>
   </main>
+
+  <div class="postparent" id="postModal">
+    <div class="postbox">
+      
+    </div>
+  </div>
 
   <script src="Dashboard.js"></script>
 </body>

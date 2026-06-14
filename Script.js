@@ -5,6 +5,10 @@ const tabSignup = document.getElementById("tab-signup");
 const panelLogin = document.getElementById("panel-login");
 const panelSignup = document.getElementById("panel-signup");
 
+// const see = localStorage.setItem("userkey", auth.currentUser.uid);
+// console.log(see);
+
+
 tabLogin.addEventListener("click", () => switchTab("login"));
 tabSignup.addEventListener("click", () => switchTab("signup"));
 
@@ -54,6 +58,8 @@ sbtn.addEventListener("click", () => {
         title: "Account Created Successfully",
         icon: "success",
       });
+      console.log(auth);
+      
       switchTab("login");
       lemail.value = semail.value;
       lpas.value = spas.value;
