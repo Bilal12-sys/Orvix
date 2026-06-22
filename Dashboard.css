@@ -5,7 +5,7 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+    
 :root {
     --bg: #020510;
     --sidebar: #05081a;
@@ -33,7 +33,7 @@ body {
         radial-gradient(ellipse at 20% 0%, rgba(124, 58, 237, 0.12) 0%, transparent 50%),
         radial-gradient(ellipse at 80% 10%, rgba(34, 211, 238, 0.07) 0%, transparent 40%),
         var(--bg);
-    background-attachment: fixed;
+    
     overflow-x: hidden;
 }
 
@@ -173,16 +173,17 @@ aside.active .imd > span {
     display: flex;
     flex-direction: column;
     gap: 8px;
+    gap: 10px;
     width: 100%;
 }
 
 .items h4 {
-    height: 48px;
+    height: 49px;
     border-radius: 12px;
     font-family: 'Orbitron', sans-serif;
     display: flex;
     align-items: center;
-    gap: 0;
+    
     padding: 0;
     justify-content: center;
     font-size: 12px;
@@ -199,6 +200,7 @@ aside.active .imd > span {
     z-index: 1;
 }
 
+
 aside.active .items h4 {
     padding: 0 18px;
     justify-content: flex-start;
@@ -206,8 +208,7 @@ aside.active .items h4 {
 }
 
 .items h4 i {
-    width: 18px;
-    min-width: 18px;
+    
     font-size: 15px;
     display: flex;
     align-items: center;
@@ -239,13 +240,25 @@ aside.active .items h4 span {
 
 .items h4.active {
     color: #fff;
-    background: linear-gradient(90deg, rgba(124, 58, 237, 0.9) 0%, rgba(59, 130, 246, 0.85) 100%);
+    background: linear-gradient(90deg, rgba(71, 4, 186, 0.9) 0%, rgba(3, 35, 86, 0.85) 100%);
     border-color: rgba(167, 139, 250, 0.3);
     box-shadow:
-        0 8px 24px rgba(124, 58, 237, 0.4),
-        0 2px 8px rgba(59, 130, 246, 0.3),
+        0 8px 24px rgba(75, 3, 199, 0.263),
+        0 2px 8px rgba(4, 79, 199, 0.429),
         inset 0 1px 0 rgba(255, 255, 255, 0.15);
 }
+
+.items h4.pa{
+     color: #fff;
+    background: #3c049d4a;
+    border-color: #4406aeb2;
+    box-shadow:
+        0 8px 24px #0799af2f,
+        0 2px 8px rgba(4, 79, 199, 0.163),
+        inset 0 1px 0 #03307913;
+        display: none;
+}
+
 
 .logout {
     margin-top: auto;
@@ -291,6 +304,7 @@ aside.active .logout h4 span {
     opacity: 1;
     max-width: 200px;
     pointer-events: auto;
+    
 }
 
 .logout h4:hover {
@@ -310,20 +324,23 @@ aside.active .logout h4 span {
 }
 
 main {
-    min-height: 70vh;
-    width: 550px;
+    min-height: 100vh;
+    width: calc(100% - var(--aside-collapsed));
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0px 100px;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 20px 20px;
     gap: 35px;
     position: relative;
+    margin-left: var(--aside-collapsed);
     transition: margin-left 0.35s cubic-bezier(0.4, 0, 0.2, 1), width 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 aside.active ~ main {
     margin-left: var(--aside-w);
+    width: calc(100% - var(--aside-w));
 
 }
 
@@ -333,12 +350,11 @@ aside.active ~ main {
     justify-content: center;
     flex-direction: column;
     width: 100%;
-    max-width: 100%;
+    max-width: 720px;
     padding: 40px 24px;
     position: relative;
     animation: welFadeIn 0.7s ease forwards;
-    margin-top: auto;
-    margin-bottom: auto;
+    margin: auto;
 }
 
 @keyframes welFadeIn {
@@ -607,6 +623,7 @@ aside.active ~ main {
     justify-content: center;
     gap: 20px;
     width: 100%;
+    
     max-width: 500px;
 }
 
@@ -625,18 +642,20 @@ aside.active ~ main {
 
 .feed-post {
     width: 100%;
-    max-width: 600px;
+    max-width: 300px;
+  
     background: linear-gradient(145deg, #0b1028 0%, #060918 100%);
     border: 1px solid rgba(124, 58, 237, 0.2);
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     animation: popup 0.35s ease;
+    
 }
 
 .feed-post-img {
     width: 100%;
-    max-height: 380px;
+    max-height: 250px;
     object-fit: cover;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
@@ -646,6 +665,13 @@ aside.active ~ main {
     display: flex;
     flex-direction: column;
     gap: 12px;
+}
+
+
+abbr {
+    text-decoration: none;
+    border-bottom: none;
+    cursor:help;
 }
 
 .feed-post-title {

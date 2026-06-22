@@ -15,18 +15,22 @@
       <div class="imd">
         <img src="IMAGES/logo.png" alt="Logo">
         <span>ORVIX</span>
+      
       </div>
-      <span class="dots" id="open"><i class="fa-solid fa-bars"></i></span>
+        <span class="dots" id="open"><i class="fa-solid fa-bars"></i></span>
+      
     </div>
 
     <div class="items">
-      <h4><i class="fa-regular fa-user"></i><span>Profile</span></h4>
-      <h4><i class="fa-solid fa-signs-post"></i><span>Posts</span></h4>
-      <h4><i class="fa-solid fa-gear"></i><span>Setting</span></h4>
+
+      <abbr title="Add post"><h4 class="pa" id="pbtn"><i class="fa-solid fa-plus"></i><span>Upload</span></h4></abbr>
+      <abbr title="User Profile"><h4><i class="fa-regular fa-user"></i><span>Profile</span></h4></abbr>
+      <abbr title="Post"><h4 class="active"><i class="fa-solid fa-signs-post"></i><span>Posts</span></h4></abbr>
+    <abbr title="Setting"><h4><i class="fa-solid fa-gear"></i><span>Setting</span></h4></abbr>
     </div>
 
     <div class="logout">
-      <h4><i class="fa-solid fa-arrow-right-from-bracket"></i><span>Logout</span></h4>
+   <abbr title="Logout"><h4 id="logout"><i class="fa-solid fa-arrow-right-from-bracket"></i><span>Logout</span></h4></abbr>
     </div>
   </aside>
 
@@ -49,6 +53,6 @@
     </div>
   </div>
 
-  <script src="Dashboard.js"></script>
+  <script type="module" src="Dashboard.js" defer></script>
 </body>
 </html>
