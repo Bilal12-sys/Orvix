@@ -249,7 +249,7 @@ onAuthStateChanged(auth, (user) => {
    
     loader.remove();
     console.log("Welcome back");
-    location.href = "dashboard.html";
+    location.href = "Dashboard.html";
   } else {
     card.style.display = "block"
     loader.remove();
