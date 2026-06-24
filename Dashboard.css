@@ -38,11 +38,19 @@ body {
 }
 
 
+.mas{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    height: 100vh;
+    
+
+}
+
 
 aside {
-    position: absolute;
-    left: 0;
-    top: 0;
+
+
     width: var(--aside-collapsed);
     height: 100%;
     background: linear-gradient(160deg, #0a0d24 0%, #060918 50%, #040713 100%);
@@ -175,7 +183,7 @@ aside.active .imd > span {
     display: flex;
     flex-direction: column;
     gap: 8px;
-    gap: 10px;
+    
     width: 100%;
 }
 
@@ -242,10 +250,10 @@ aside.active .items h4 span {
 
 .items h4.active {
     color: #fff;
-    background: linear-gradient(90deg, rgba(71, 4, 186, 0.9) 0%, rgba(3, 35, 86, 0.85) 100%);
+    background: linear-gradient(90deg, rgba(71, 4, 186, 0.262) 0%, rgba(3, 46, 113, 0.327) 100%);
     border-color: rgba(167, 139, 250, 0.3);
     box-shadow:
-        0 8px 24px rgba(75, 3, 199, 0.263),
+        0 8px 24px rgba(61, 5, 157, 0.127),
         0 2px 8px rgba(4, 79, 199, 0.429),
         inset 0 1px 0 rgba(255, 255, 255, 0.15);
 }
@@ -327,21 +335,20 @@ aside.active .logout h4 span {
 
 main {
     min-height: 100vh;
-    /* width: calc(100% - var(--aside-collapsed)); */
+    width: calc(100% - var(--aside-collapsed));
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: flex-start;
     align-items: flex-start;
-    padding: 20px 20px;
+    padding: 5px 10px;
     gap: 35px;
     position: relative;
-    margin-left: var(--aside-collapsed);
+    margin-left: 10px;
     transition: margin-left 0.35s cubic-bezier(0.4, 0, 0.2, 1), width 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-aside.active ~ main {
-    margin-left: var(--aside-w);
+aside.active ~ main {   
     width: calc(100% - var(--aside-w));
 
 }
@@ -653,17 +660,17 @@ aside.active ~ main {
    
     justify-content: flex-start;
     flex-direction: row;
-     padding: 10px 20px;
+     padding: 10px 0px;
     gap: 35px;
 } 
 
 .feed-post {
-    width: 300px;
+    width: 260px;
     background: linear-gradient(145deg, #0b1028 0%, #060918 100%);
     border: 1px solid rgba(124, 58, 237, 0.2);
     border-radius: 20px;
-     max-width: 900px;
-    max-height: 800px;
+     max-width: 400px;
+    max-height: 500px;
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     animation: popup 0.35s ease;
@@ -672,9 +679,10 @@ aside.active ~ main {
 
 .feed-post-img {
     width: 100%;
-    height: 250px;
+    height: 220px;
     max-height: 350px;
     object-fit: cover;
+    background-size: cover;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
@@ -682,7 +690,7 @@ aside.active ~ main {
     padding: 24px;
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 10px;
 }
 
 .dbp{
@@ -832,20 +840,166 @@ abbr {
 
 
 
+@media (max-width:568px){
 
-
-/* ================= TABLET & MOBILE ================= */
-@media (max-width:768px){
+     body{
+        height: 100%;
+        padding: 0;
+    }
 
     
-
-aside {
-   z-index: 9999999999999999;
+.mas{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
-aside.active{
+aside{
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
 
-    margin-left: auto;
+    width: min(92%, 520px);
+    height: 78px;
+    padding: 0 14px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 24px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(11,16,40,.92),
+            rgba(6,9,24,.92)
+        );
+
+    backdrop-filter: blur(22px);
+    -webkit-backdrop-filter: blur(22px);
+
+    border: 1px solid rgba(124,58,237,.25);
+
+    box-shadow:
+        0 10px 35px rgba(0,0,0,.45),
+        0 0 25px rgba(124,58,237,.18),
+        inset 0 1px 0 rgba(255,255,255,.06);
+
+    z-index: 9999;
+    overflow: hidden;
 }
+
+/* optional hover */
+aside:hover{
+    box-shadow:
+        0 15px 45px rgba(0,0,0,.5),
+        0 0 40px rgba(124,58,237,.25),
+        0 0 20px rgba(34,211,238,.12);
+}
+
+    /* hide hamburger */
+    .dot,
+    .dots span{
+        display: none;
+    }
+
+    /* hide logo image */
+    .imd img{
+        display: none;
+    }
+
+    /* show only text */
+    .imd{
+        display: none;
+    }
+
+    .items{
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        gap: 0;
+    }
+
+    .items h4{
+        width: 55px;
+        height: 55px;
+        border-radius: 16px;
+        justify-content: center;
+        padding: 0;
+    }
+
+    /* show text under icon if wanted */
+    .items h4 span{
+        display: none;
+    }
+
+    .logout{
+        margin-top: 0;
+        width: auto;
+    }
+
+    .logout h4{
+        width: 55px;
+        height: 55px;
+        justify-content: center;
+        padding: 0;
+    }
+
+    .logout h4 span{
+        display: none;
+    }
+
+    .feeds{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    
+.feed-post {
+    width: 100%;
+    background: linear-gradient(145deg, #0b1028 0%, #060918 100%);
+    border: 1px solid rgba(124, 58, 237, 0.2);
+    border-radius: 20px;
+     max-width: 400px;
+    max-height: 500px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    animation: popup 0.35s ease;
+}
+
+
+.feed-post-img {
+    width: 100%;
+    height: 300px;
+    max-height: 350px;
+    object-fit: cover;
+    background-size: cover;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.feed-post-content {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+    main{
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-bottom: 90px;
+    }
+
+
 
 }
